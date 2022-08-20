@@ -1,3 +1,8 @@
+Outstanding Task:
+1. Mongodb authentication problem in deployment
+2. watchtower
+3. Docker Swarm
+
 Technology used:
 1. NodeJS (Express)
 2. Mongo
