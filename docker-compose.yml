@@ -19,7 +19,7 @@ services:
       - redis
 
   mongo:
-    image: mongo:5.0.10
+    image: mongo:5.0.11
 
   redis:
     image: redis:7.0
