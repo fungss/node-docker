@@ -13,9 +13,9 @@ services:
         NODE_ENV: production
     environment:
       - NODE_ENV=production
-      - MONGO_USER=rofung
-      - MONGO_PASSWORD=A12345678
-      - SESSION_SECRET=c041c19e-8d1c-49bf-adcb-0f9650c6d4cf
+      - MONGO_USER=${MONGO_USER}
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
+      - SESSION_SECRET=${SESSION_SECRET}
     # ports:
     #   - 3000:3000
     command: node node-app/index.js
@@ -24,8 +24,8 @@ services:
     volumes:
       - mongo-db:/data/db
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=rofung
-      - MONGO_INITDB_ROOT_PASSWORD=A12345678
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
 
 volumes:
   mongo-db:
