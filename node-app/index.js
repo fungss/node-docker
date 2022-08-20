@@ -20,7 +20,7 @@ const app = express();
 // database connection
 // --------------------------------------------------------------------------------------------
 // mongo
-const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`;
+const mongoURL = `mongodb://${MONGO_IP}:${MONGO_PORT}`;
 
 const connectWithRetry = () => {
     console.log(mongoURL)
@@ -28,6 +28,11 @@ const connectWithRetry = () => {
     // .connect('mongodb://rofung:A12345678@172.28.0.2:27017/?authSource=admin')
     // .connect('mongodb://rofung:A12345678@mongo:27017/?authSource=admin')
     .connect(mongoURL, {
+        auth: {
+            authSource: "admin"
+        },
+        user: MONGO_USER,
+        pass: MONGO_PASSWORD,
         useNewUrlParser: true,
         useUnifiedTopology: true,
         // useFindAndModify: false,
