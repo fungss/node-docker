@@ -28,9 +28,9 @@ const connectWithRetry = () => {
     // .connect('mongodb://rofung:A12345678@172.28.0.2:27017/?authSource=admin')
     // .connect('mongodb://rofung:A12345678@mongo:27017/?authSource=admin')
     .connect(mongoURL, {
-        auth: {
-            authSource: "admin"
-        },
+        // auth: {
+        //     authSource: "admin"
+        // },
         user: MONGO_USER,
         pass: MONGO_PASSWORD,
         useNewUrlParser: true,
